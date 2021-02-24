@@ -5,6 +5,7 @@ import SideTemplateArea from '../../feature/SideTemplateArea';
 import SideTemplateForm from '../../feature/SideTemplateForm';
 import { Link } from 'react-router-dom';
 import { useColor } from '../../context/ColorProvider';
+import Header from '../../components/Header';
 
 const Home = () => {
   const [canvas, setCanvas] = useState('');
@@ -54,14 +55,7 @@ const Home = () => {
 
   return (
     <div className="flex flex-col items-start min-h-screen bg-blue-100">
-      <nav className="flex flex-row px-4 py-2 mb-6 w-full">
-        <Link className="inline-block px-4 py-2 font-semibold" to="/">
-          Home
-        </Link>
-        <Link className="inline-block px-4 py-2 font-semibold" to="/playground">
-          Playground
-        </Link>
-      </nav>
+      <Header />
 
       <div className="flex flex-row items-start">
         <SideTemplateArea addImage={addImage} canvas={canvas} />
